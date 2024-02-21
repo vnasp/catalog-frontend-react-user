@@ -14,9 +14,13 @@ const DataProvider = ({ children }) => {
     setShowCart(false)
     console.log(showCart)
   };
+  
+  const requiredQty = 10
+  const actualQty = cart.reduce((total, item) => total + item.quantity, 0)
+  const moreItems = requiredQty - actualQty
 
   return (
-    <DataContext.Provider value={{ cart, setCart, showCart, setShowCart, handleShowCart, handleCloseCart }}>
+    <DataContext.Provider value={{ cart, setCart, showCart, setShowCart, handleShowCart, handleCloseCart, requiredQty, actualQty, moreItems }}>
       {children}
     </DataContext.Provider>
   )

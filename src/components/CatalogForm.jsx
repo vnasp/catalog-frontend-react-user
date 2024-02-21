@@ -48,11 +48,6 @@ const CatalogForm = () => {
       <div id="RequestAQuote" className="flex flex-col justify-center items-center mx-1 lg:grid lg:grid-cols-2 bg-gray-300 rounded-xl lg:p-6 lg:m-16">
         <div className="mb-2 lg:m-0">
           <img src="./gear.webp" width={600} className="rounded-t-xl" />
-          <div className="lg:block">
-            <ShareOnWhatsApp
-              message="Check out this team gears"
-              url={window.location.href}
-            /> </div>
         </div>
         <div className="my-4 mx-1 lg:m-0">
           <h2 className="text-3xl text-center font-bold uppercase">Top Gear Customized</h2>
@@ -133,35 +128,34 @@ const CatalogForm = () => {
             </div>
           </div>
           <div>
-          <button
-            className={`btn primary w-full ${!allSelectionsMade ? 'opacity-50 cursor-not-allowed' : ''}`}
-            type="button"
-            onClick={() => {
-              if(allSelectionsMade) {
-                addToCart({
-                  id: uuidv4(),
-                  fit: selectedFit,
-                  type: selectedType,
-                  size: selectedSize,
-                  quantity: selectedQuantity || 1 
-                });
-              }
-            }}
-            disabled={!allSelectionsMade}
-          >
-            Add To Quote
-          </button>
-          {/* Mensaje de alerta si no se han realizado todas las selecciones */}
-          {!allSelectionsMade && (
-            <p className="text-red-500 text-center mt-2">
-              You must select an option for each category to proceed.
-            </p>
-          )}
-        </div>
+            <button
+              className={`btn primary w-full ${!allSelectionsMade ? 'opacity-50 cursor-not-allowed' : ''}`}
+              type="button"
+              onClick={() => {
+                if (allSelectionsMade) {
+                  addToCart({
+                    id: uuidv4(),
+                    fit: selectedFit,
+                    type: selectedType,
+                    size: selectedSize,
+                    quantity: selectedQuantity || 1
+                  });
+                }
+              }}
+              disabled={!allSelectionsMade}
+            >
+              Add To Quote
+            </button>
+            {!allSelectionsMade && (
+              <p className="text-red-500 text-center mt-2">
+                You must select an option for each category to proceed.
+              </p>
+            )}
+          </div>
           <div className="flex flex-col m-4">
             <div className="text-justify">Our jerseys are made from Dryfit fabric, featuring high quality Sublimation for direct printing, ensuring the design remains intact. You can customize the jersey with any color or design. Adding numbers or letters is <span className="font-bold">free of charge</span>. We offer unisex sizing to accommodate both men and women, with an option for a female fit as well. We work with a minimum order of 10 assorted units, but you get free shipping and design services.</div>
           </div>
-          <div className="lg:hidden">
+          <div className="">
             <ShareOnWhatsApp
               message="Check out this team gears"
               url={window.location.href}

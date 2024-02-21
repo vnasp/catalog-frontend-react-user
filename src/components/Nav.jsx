@@ -2,7 +2,7 @@ import { useContext } from "react"
 import { DataContext } from "../context/DataContext"
 import { FaChevronDown } from "react-icons/fa6";
 import { BsInstagram } from "react-icons/bs";
-import { MdOutlineRateReview } from "react-icons/md"
+import { FaCartShopping } from "react-icons/fa6";
 import CartDetail from "./CartDetail"
 import CartEmpty from "./CartEmpty"
 
@@ -26,7 +26,7 @@ const Nav = () => {
         <div className="flex flex-row justify-between gap-10 mt-4 lg:mt-0">
           <div className="inline-flex items-center"><BsInstagram className="icon" />Follow Us</div>
           <button type="button" onClick={handleShowCart} className="inline-flex items-center">
-            <MdOutlineRateReview className="icon" />Request a Quote
+            <FaCartShopping className="icon" />Cart
           </button>
         </div>
       </nav>

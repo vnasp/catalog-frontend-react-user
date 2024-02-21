@@ -1,9 +1,10 @@
 import { useContext } from "react"
 import { DataContext } from "../context/DataContext"
 import { FaCirclePlus, FaCircleMinus } from "react-icons/fa6"
+import ContactForm from "./ContactForm"
 
 const CartDetail = () => {
-  const { cart, setCart } = useContext(DataContext)
+  const { cart, setCart, moreItems } = useContext(DataContext)
 
   const cartFilter = cart.filter((item) => item.quantity > 0)
 
@@ -20,9 +21,6 @@ const CartDetail = () => {
     updateCart[cartIndex] = { ...updateCart[cartIndex], quantity: updateCart[cartIndex].quantity - 1 }
     setCart(updateCart)
   }
-  const requiredQty = 10
-  const actualQty = cart.reduce((total, item) => total + item.quantity, 0)
-  const moreItems = requiredQty - actualQty
 
   return (
     <>
@@ -44,25 +42,15 @@ const CartDetail = () => {
       ))}
       <hr />
       {
-         moreItems > 0 ?
-      <div className="bg-red-200 rounded-md p-2 text-sm my-4">
-      Please remember, the minimum total quantity is 10 assorted units. You need to add {moreItems} more items to request a quote.
-      </div> :
-      <div className="bg-green-200 rounded-md p-2 text-sm my-4">
-      Great! You've met the minimum total quantity. Please fill in your name and email to send you the quote.
-      </div>
+        moreItems > 0 ?
+          <div className="bg-red-200 rounded-md p-2 text-sm my-4">
+            Please remember, the minimum total quantity is 10 assorted units. You need to add {moreItems} more items to request a quote.
+          </div> :
+          <div className="bg-green-200 rounded-md p-2 text-sm my-4">
+            Great! You've met the minimum total quantity. Please fill in your name and email to send you the quote.
+          </div>
       }
-      <div className="div-custom pb-4">
-        <div>
-          <div className="">¿Where does it send?</div>
-          nombre
-          input email
-        </div>
-      </div>
-      <button className="btn primary w-full" type="submit" href="./">Request a Quote</button>
-      <div className="pt-4 text-secondary text-center">
-      </div>
-
+      <ContactForm/>
     </>
   )
 }
