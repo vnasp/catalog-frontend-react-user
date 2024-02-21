@@ -1,4 +1,4 @@
-import { useState, useContext } from "react"
+import { useState, useContext} from "react"
 import { DataContext } from "../context/DataContext"
 import emailjs from '@emailjs/browser'
 
@@ -22,7 +22,6 @@ const ContactForm = () => {
     emailjs.send('service_sqdxv7s', 'template_kbsp1ei', formData, 'fjrMc5_WnIvQiV9Ic')
       .then((result) => {
         console.log(result.text);
-        alert('Message sent successfully!');
       }, (error) => {
         console.log(error.text);
         alert('Failed to send the message, please try again.');
@@ -45,7 +44,7 @@ const ContactForm = () => {
         <input
           type="text"
           name="name"
-          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500 mb-4"
+          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 mb-4"
           value={formData.name}
           onChange={handleChange}
           placeholder="Full Name"

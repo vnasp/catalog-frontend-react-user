@@ -1,4 +1,5 @@
 import { FaCirclePlus, FaCircleMinus } from "react-icons/fa6"
+import { IoShirtOutline } from "react-icons/io5";
 import { useContext, useState } from "react"
 import { DataContext } from "../context/DataContext"
 import ShareOnWhatsApp from "./Whatsapp"
@@ -40,14 +41,13 @@ const CatalogForm = () => {
   const addToCart = (productDetails) => {
     setCart((prevCart) => [...prevCart, productDetails])
     setShowCart(true)
-    console.log(cart)
   }
 
   return (
     <>
       <div id="RequestAQuote" className="flex flex-col justify-center items-center mx-1 lg:grid lg:grid-cols-2 bg-gray-300 rounded-xl lg:p-6 lg:m-16">
         <div className="mb-2 lg:m-0">
-          <img src="./gear.webp" width={600} className="rounded-t-xl" />
+          <img src="./assets/img/gear.webp" width={600} className="rounded-t-xl" />
         </div>
         <div className="my-4 mx-1 lg:m-0">
           <h2 className="text-3xl text-center font-bold uppercase">Top Gear Customized</h2>
@@ -107,10 +107,19 @@ const CatalogForm = () => {
               <button
                 className={`size ${selectedSize === 'L' ? 'selected' : ''}`}
                 onClick={() => handleSizeClick('L')}
-              > L </button>         <button
+              > L </button>
+              <button
                 className={`size ${selectedSize === 'XL' ? 'selected' : ''}`}
                 onClick={() => handleSizeClick('XL')}
               > XL </button>
+              <button
+                className={`size ${selectedSize === '2XL' ? 'selected' : ''}`}
+                onClick={() => handleSizeClick('2XL')}
+              > 2XL </button>
+              <button
+                className={`size ${selectedSize === '3XL' ? 'selected' : ''}`}
+                onClick={() => handleSizeClick('3XL')}
+              > 3XL </button>
             </div>
           </div>
           <div id="quantityOptions" className="py-4">
@@ -119,12 +128,12 @@ const CatalogForm = () => {
               <FaCircleMinus className="text-5xl lg:text-4xl mx-4 cursor-pointer" onClick={decrementQuantity} />
               <input
                 type="number"
-                className="rounded-lg border-red-500 py-3 text-center"
+                className="rounded-lg border-green-500 py-3 text-center"
                 value={selectedQuantity}
                 onChange={handleQuantityChange}
                 min="1"
               />
-              <FaCirclePlus className="text-5xl lg:text-4xl  text-red-500 mx-4 cursor-pointer" onClick={incrementQuantity} />
+              <FaCirclePlus className="text-5xl lg:text-4xl mx-4 cursor-pointer" onClick={incrementQuantity} />
             </div>
           </div>
           <div>
@@ -155,11 +164,17 @@ const CatalogForm = () => {
           <div className="flex flex-col m-4">
             <div className="text-justify">Our jerseys are made from Dryfit fabric, featuring high quality Sublimation for direct printing, ensuring the design remains intact. You can customize the jersey with any color or design. Adding numbers or letters is <span className="font-bold">free of charge</span>. We offer unisex sizing to accommodate both men and women, with an option for a female fit as well. We work with a minimum order of 10 assorted units, but you get free shipping and design services.</div>
           </div>
-          <div className="">
-            <ShareOnWhatsApp
-              message="Check out this team gears"
-              url={window.location.href}
-            /> </div>
+          <div className="flex flex-row justify-between items-center">
+            <div className="flex items-center justify-center">
+            <IoShirtOutline className="text-green-500 p-2 text-5xl font-bold"/> Check the Size Chart
+            </div>
+            <div className="w-1/2">
+              <ShareOnWhatsApp
+                message="Check out this team gears"
+                url={window.location.href}
+              />
+            </div>
+          </div>
         </div>
       </div>
     </>

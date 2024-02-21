@@ -14,7 +14,7 @@ const Nav = () => {
   return (
     <>
       <nav className="flex flex-col gap-4 items-center bg-black text-white pt-4 pb-2 lg:flex-row lg:justify-between lg:p-6">
-        <img src="/logo_white.png" className="logo" alt="Delta Sport US | Custom Team Apparel" />
+        <img src="./assets/img/logo_white.png" className="logo" alt="Delta Sport US | Custom Team Apparel" />
         <div className="hidden lg:flex justify-between items-center">
           <a className="uppercase me-8 inline-flex" href="#OurProcess">
             Our Process <FaChevronDown className="hidden lg:block lg:ms-2" />

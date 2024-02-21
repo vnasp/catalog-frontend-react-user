@@ -18,11 +18,10 @@ const ScrollToTopButton = () => {
     return () => window.removeEventListener('scroll', toggleVisibility);
   }, []);
 
-  // Función para desplazar hacia arriba
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth', // Esto habilita el desplazamiento suave
+      behavior: 'smooth',
     });
   };
 
@@ -30,7 +29,7 @@ const ScrollToTopButton = () => {
     isVisible && (
       <button
         onClick={scrollToTop}
-        className="fixed bottom-5 right-5 bg-red-500 text-white p-3 rounded-full cursor-pointer hover:bg-blue-700 transition duration-200 ease-in-out shadow-lg"
+        className="fixed bottom-5 right-5 bg-green-500 text-white p-3 rounded-full cursor-pointer hover:bg-green-700 transition duration-200 ease-in-out shadow-lg"
       >
         <FaChevronUp />
       </button>

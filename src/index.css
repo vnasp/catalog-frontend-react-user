@@ -38,7 +38,7 @@ h3 {
 }
 
 .header-cover {
-  background-image: url("/banner.webp");
+  background-image: url("./assets/img/banner.webp");
   background-repeat: no-repeat;
   background-size: cover;
   height: 450px;
@@ -81,27 +81,33 @@ h3 {
 }
 
 .process {
-  @apply flex flex-col items-center justify-center text-center text-white rounded-full py-6 px-4 shadow-md shadow-red-900 w-48 h-48;
+  @apply flex flex-col items-center justify-center text-center text-black rounded-full py-6 px-4 shadow-md shadow-gray-300 w-48 h-48;
 }
 
 .size {
-  @apply bg-white border-2 border-white rounded-lg px-6 py-2 shadow-md shadow-gray-500
+  @apply bg-white border-2 border-white rounded-lg px-6 py-2 shadow-md shadow-gray-500 focus:ring-white focus:border-white hover:ring-white hover:border-white
 }
 
 .size:hover,
 .size:active {
-  @apply border-2 border-red-500
+  @apply border-2 border-green-800
 }
 
 .size.selected {
-  background-color: #E4002B;
-  /* Un color verde para indicar selección */
+  background-color: #4caf50;
   color: white;
 
 }
 
 .product-quality {
   @apply inline-flex items-start gap-4
+}
+
+.swiper-button-next, .swiper-rtl .swiper-button-prev,
+.swiper-button-prev, .swiper-rtl .swiper-button-next
+{
+  color:red;
+  font-weight: 900;
 }
 
 @media (min-width: 768px) {
@@ -118,29 +124,4 @@ h3 {
   .header-cover {
     height: 650px;
   }
-}
-
-/* BrandSlider.css */
-.brand-slider-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  overflow-x: auto;
-  white-space: nowrap;
-  width: 75%;
-}
-
-.brand-slider {
-  display: flex;
-  align-items: center;
-}
-
-.brand-item {
-  margin-right: 20px;
-  padding: 4rem 2rem;
-}
-
-.brand-item img {
-  width: 200px;
-  /* Ajusta esto según tus necesidades */
 }
