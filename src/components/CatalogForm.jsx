@@ -1,11 +1,11 @@
 import { FaCirclePlus, FaCircleMinus } from "react-icons/fa6"
-import { useContext,useState } from "react"
+import { useContext, useState } from "react"
 import { DataContext } from "../context/DataContext"
 import ShareOnWhatsApp from "./Whatsapp"
 import { v4 as uuidv4 } from 'uuid';
 
 const CatalogForm = () => {
-  const { cart, setCart, setShowCart} = useContext(DataContext)
+  const { cart, setCart, setShowCart } = useContext(DataContext)
   const [selectedFit, setSelectedFit] = useState('');
   const [selectedType, setSelectedType] = useState('');
   const [selectedSize, setSelectedSize] = useState('');
@@ -34,6 +34,8 @@ const CatalogForm = () => {
     const value = Math.max(1, parseInt(event.target.value, 10));
     setSelectedQuantity(value || 1);
   };
+
+  const allSelectionsMade = selectedFit && selectedType && selectedSize && selectedQuantity > 0
 
   const addToCart = (productDetails) => {
     setCart((prevCart) => [...prevCart, productDetails])
@@ -131,13 +133,31 @@ const CatalogForm = () => {
             </div>
           </div>
           <div>
-            <button className="btn primary w-full" type="button" onClick={() => addToCart({
-              id: uuidv4(),
-              fit: selectedFit,
-              type: selectedType,
-              size: selectedSize,
-              quantity: selectedQuantity || 1 
-            })}>Add To Quote</button></div>
+          <button
+            className={`btn primary w-full ${!allSelectionsMade ? 'opacity-50 cursor-not-allowed' : ''}`}
+            type="button"
+            onClick={() => {
+              if(allSelectionsMade) {
+                addToCart({
+                  id: uuidv4(),
+                  fit: selectedFit,
+                  type: selectedType,
+                  size: selectedSize,
+                  quantity: selectedQuantity || 1 
+                });
+              }
+            }}
+            disabled={!allSelectionsMade}
+          >
+            Add To Quote
+          </button>
+          {/* Mensaje de alerta si no se han realizado todas las selecciones */}
+          {!allSelectionsMade && (
+            <p className="text-red-500 text-center mt-2">
+              You must select an option for each category to proceed.
+            </p>
+          )}
+        </div>
           <div className="flex flex-col m-4">
             <div className="text-justify">Our jerseys are made from Dryfit fabric, featuring high quality Sublimation for direct printing, ensuring the design remains intact. You can customize the jersey with any color or design. Adding numbers or letters is <span className="font-bold">free of charge</span>. We offer unisex sizing to accommodate both men and women, with an option for a female fit as well. We work with a minimum order of 10 assorted units, but you get free shipping and design services.</div>
           </div>
