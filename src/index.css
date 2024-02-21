@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  background-color: #D4D4D4;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  margin: 0;
+  max-width: 100vw;
+}
+
+h1 {
+  font-family: 'Bebas Neue', serif;
+  font-weight: 800;
+  font-size: 4rem;
+}
+
+h2 {
+  font-family: 'Bebas Neue', serif;
+  font-size: 4rem;
+}
+
+h3 {
+  font-family: 'Bebas Neue', serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.header-cover {
+  background-image: url("/banner.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 450px;
+}
+
+.logo {
+  width: 250px;
+}
+
+.offcanvas-custom {
+  @apply fixed top-0 right-0 w-80 px-4 h-full bg-gray-100 shadow-lg transform ease-in-out duration-300
+}
+
+.icon {
+  color: #E4002B;
+  margin-right: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.btn {
+  @apply px-3 py-4 rounded-lg font-bold;
+}
+
+.primary {
+  @apply bg-red-500 text-white;
+}
+
+.bg-red {
+  background-color: #E4002B;
+}
+
+.reassurance {
+  @apply flex flex-col items-center justify-center bg-gray-100 text-black rounded-xl py-6 px-4 shadow-md shadow-gray-300;
+}
+
+.reassurance .icon {
+  color: #E4002B;
+  margin: 0.5rem;
+  font-size: 2.25rem;
+}
+
+.process {
+  @apply flex flex-col items-center justify-center text-center text-white rounded-full py-6 px-4 shadow-md shadow-red-900 w-48 h-48;
+}
+
+.size {
+  @apply bg-white border-2 border-white rounded-lg px-6 py-2 shadow-md shadow-gray-500
+}
+
+.size:hover,
+.size:active {
+  @apply border-2 border-red-500
+}
+
+.size.selected {
+  background-color: #E4002B;
+  /* Un color verde para indicar selección */
+  color: white;
+
+}
+
+.product-quality {
+  @apply inline-flex items-start gap-4
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 6rem;
+    line-height: 5.5rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+    line-height: 1rem;
+  }
+
+  .header-cover {
+    height: 650px;
+  }
+}
+
+/* BrandSlider.css */
+.brand-slider-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  overflow-x: auto;
+  white-space: nowrap;
+  width: 75%;
+}
+
+.brand-slider {
+  display: flex;
+  align-items: center;
+}
+
+.brand-item {
+  margin-right: 20px;
+  padding: 4rem 2rem;
+}
+
+.brand-item img {
+  width: 200px;
+  /* Ajusta esto según tus necesidades */
+}
