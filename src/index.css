@@ -38,7 +38,7 @@ h3 {
 }
 
 .header-cover {
-  background-image: url("./assets/img/banner.webp");
+  background-image: url("/assets/img/banner.webp");
   background-repeat: no-repeat;
   background-size: cover;
   height: 450px;
