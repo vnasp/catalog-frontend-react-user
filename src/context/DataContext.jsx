@@ -4,6 +4,11 @@ export const DataContext = createContext()
 const DataProvider = ({ children }) => {
   const [cart, setCart] = useState([])
   const [showCart, setShowCart] = useState(false);
+  const [showConfirmationPopup, setShowConfirmationPopup] = useState(false);
+
+  const handleCloseConfirmationPopup = () => {
+    setShowConfirmationPopup(false);
+  };
 
   const handleShowCart = () => {
     setShowCart(true)
@@ -14,13 +19,13 @@ const DataProvider = ({ children }) => {
     setShowCart(false)
     console.log(showCart)
   };
-  
+
   const requiredQty = 10
   const actualQty = cart.reduce((total, item) => total + item.quantity, 0)
   const moreItems = requiredQty - actualQty
 
   return (
-    <DataContext.Provider value={{ cart, setCart, showCart, setShowCart, handleShowCart, handleCloseCart, requiredQty, actualQty, moreItems }}>
+    <DataContext.Provider value={{ cart, setCart, showCart, setShowCart, handleShowCart, handleCloseCart, requiredQty, actualQty, moreItems, showConfirmationPopup, setShowConfirmationPopup, handleCloseConfirmationPopup }}>
       {children}
     </DataContext.Provider>
   )

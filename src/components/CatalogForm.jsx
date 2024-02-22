@@ -6,7 +6,7 @@ import ShareOnWhatsApp from "./Whatsapp"
 import { v4 as uuidv4 } from 'uuid';
 
 const CatalogForm = () => {
-  const { cart, setCart, setShowCart } = useContext(DataContext)
+  const { cart, setCart, setShowCart, showConfirmationPopup,handleCloseConfirmationPopup } = useContext(DataContext)
   const [selectedFit, setSelectedFit] = useState('');
   const [selectedType, setSelectedType] = useState('');
   const [selectedSize, setSelectedSize] = useState('');
@@ -42,12 +42,25 @@ const CatalogForm = () => {
 
   const addToCart = (productDetails) => {
     setCart((prevCart) => [...prevCart, productDetails])
+    setSelectedFit(null);
+    setSelectedType(null);
+    setSelectedSize(null);
     setShowCart(true)
   }
 
   return (
     <>
-      <div id="RequestAQuote" className="flex flex-col justify-center items-center mx-1 lg:grid lg:grid-cols-2 bg-gray-300 rounded-xl lg:p-6 lg:m-16">
+    {
+        showConfirmationPopup && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+            <div className="bg-white p-12 rounded-lg text-center">
+              <p>Your message has been sent successfully. <br/>We will send you the quotation soon.</p>
+              <button className="bg-green-500 text-white px-4 py-2 rounded-lg mt-8" onClick={handleCloseConfirmationPopup}>Close</button>
+            </div>
+          </div>
+        )
+      }
+      <div id="RequestAQuote" className="flex flex-col justify-center items-start mt-32 lg:grid lg:grid-cols-2 bg-gray-200 rounded-xl lg:p-6 lg:mx-16 lg:mb-16">
         <div className="mb-2 lg:m-0">
           <img src="./assets/img/gear.webp" width={600} className="rounded-t-xl" />
         </div>
@@ -167,7 +180,7 @@ const CatalogForm = () => {
             <div className="text-justify">Our jerseys are made from Dryfit fabric, featuring high quality Sublimation for direct printing, ensuring the design remains intact. You can customize the jersey with any color or design. Adding numbers or letters is <span className="font-bold">free of charge</span>. We offer unisex sizing to accommodate both men and women, with an option for a female fit as well. We work with a minimum order of 10 assorted units, but you get free shipping and design services.</div>
           </div>
           <div className="flex flex-row justify-between items-center">
-            <div className="flex items-center justify-center" onClick={() => setIsSizeChartVisible(true)}>
+            <div className="flex items-center justify-center cursor-pointer" onClick={() => setIsSizeChartVisible(true)}>
               <IoShirtOutline className="text-green-500 p-2 text-5xl font-bold" /> Check the Size Chart
             </div>
 
