@@ -52,7 +52,7 @@ const CatalogForm = () => {
     <>
     {
         showConfirmationPopup && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-40">
             <div className="bg-white p-12 rounded-lg text-center">
               <p>Your message has been sent successfully. <br/>We will send you the quotation soon.</p>
               <button className="bg-green-500 text-white px-4 py-2 rounded-lg mt-8" onClick={handleCloseConfirmationPopup}>Close</button>
@@ -62,7 +62,7 @@ const CatalogForm = () => {
       }
       <div id="RequestAQuote" className="flex flex-col justify-center items-start mt-32 lg:grid lg:grid-cols-2 bg-gray-200 rounded-xl lg:p-6 lg:mx-16 lg:mb-16">
         <div className="mb-2 lg:m-0">
-          <img src="./assets/img/gear.webp" width={600} className="rounded-t-xl" />
+          <img src="./assets/img/gear.webp" className="rounded-t-xl w-fit pe-8" />
         </div>
         <div className="my-4 mx-1 lg:m-0">
           <h2 className="text-3xl text-center font-bold uppercase">Top Gear Customized</h2>
