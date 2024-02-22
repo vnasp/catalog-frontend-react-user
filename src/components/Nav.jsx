@@ -23,7 +23,7 @@ const Nav = () => {
             Request a Quote <FaChevronDown className="hidden lg:block lg:ms-2" />
           </a>
         </div>
-        <div className="flex flex-row justify-between gap-10 mt-4 lg:mt-0">
+        <div className="flex flex-row justify-between gap-10 mt-4 lg:mt-0 z-50">
           <a href="/" className="inline-flex items-center"><BsInstagram className="icon" />Follow Us</a>
           <button type="button" onClick={handleShowCart} className="inline-flex items-center">
             <FaCartShopping className="icon" />Cart

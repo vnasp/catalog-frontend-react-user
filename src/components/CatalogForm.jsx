@@ -6,7 +6,7 @@ import ShareOnWhatsApp from "./Whatsapp"
 import { v4 as uuidv4 } from 'uuid'
 
 const CatalogForm = () => {
-  const { setCart, setShowCart, showConfirmationPopup,handleCloseConfirmationPopup } = useContext(DataContext)
+  const { cart,setCart, setShowCart, showConfirmationPopup,handleCloseConfirmationPopup } = useContext(DataContext)
   const [selectedFit, setSelectedFit] = useState('')
   const [selectedType, setSelectedType] = useState('')
   const [selectedSize, setSelectedSize] = useState('')
@@ -56,7 +56,7 @@ const CatalogForm = () => {
     setSelectedSize(null)
     setShowCart(true)
   }
-
+console.log(cart)
   return (
     <>
     {
@@ -71,7 +71,7 @@ const CatalogForm = () => {
       }
       <div id="RequestAQuote" className="flex flex-col justify-center items-start mt-32 lg:grid lg:grid-cols-2 bg-gray-200 rounded-xl lg:p-6 lg:mx-16 lg:mb-16">
         <div className="mb-2 lg:m-0">
-          <img src={currentImage} className="rounded-t-xl w-fit pe-8" />
+          <img src={currentImage} className="rounded-t-xl w-fit lg:pe-8" />
           <p className="text-center text-sm">Reference image. You can customize the entire design and colors.</p>
         </div>
         <div className="my-4 mx-1 lg:m-0">
@@ -171,6 +171,7 @@ const CatalogForm = () => {
                     id: uuidv4(),
                     fit: selectedFit,
                     type: selectedType,
+                    imageUrl: currentImage,
                     size: selectedSize,
                     quantity: selectedQuantity || 1
                   })

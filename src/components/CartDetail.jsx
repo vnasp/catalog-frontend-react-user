@@ -27,7 +27,7 @@ const CartDetail = () => {
       {cartFilter.map((item) => (
         <div className="flex flex-row justify-between items-center pb-2" key={item.id}>
           <div className="text-center">
-            <img src="./assets/img/gear.webp" width={50} className="rounded-md" />
+            <img src={item.imageUrl} width={50} className="rounded-md" />
           </div>
           <div className="">
             <p className="text-sm">{item.type}</p>
