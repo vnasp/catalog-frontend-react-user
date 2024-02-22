@@ -170,9 +170,9 @@ h3 {
   z-index: 1000;
   transform: skewY(-1deg);
   transform-origin: bottom right;
-  -webkit-box-shadow: 0px 10px 20px 10px rgba(0,0,0,0.9);
--moz-box-shadow: 0px 10px 20px 10px rgba(0,0,0,0.9);
-box-shadow: 0px 10px 20px 10px rgba(0,0,0,0.9);
+  -webkit-box-shadow: 0px 10px 20px 10px rgba(0,0,0,0.4);
+-moz-box-shadow: 0px 10px 20px 10px rgba(0,0,0,0.4);
+box-shadow: 0px 10px 20px 10px rgba(0,0,0,0.4);
 
 }
 
