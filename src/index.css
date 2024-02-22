@@ -89,7 +89,7 @@ h3 {
 }
 
 .reassurance {
-  @apply flex flex-col items-center justify-center bg-gray-100 text-black rounded-xl p-4 shadow-md shadow-gray-300;
+  @apply flex flex-col items-center justify-center bg-gray-100 text-black rounded-lg p-4 shadow-md shadow-gray-300;
 }
 
 .reassurance .icon {
@@ -99,7 +99,7 @@ h3 {
 }
 
 .process {
-  @apply flex flex-col items-center justify-center text-center text-black rounded-full py-6 px-4 shadow-md shadow-gray-300 w-48 h-48 bg-gray-100 relative;
+  @apply flex flex-col items-center justify-center text-center text-black rounded-lg py-6 px-4 shadow-md shadow-gray-300 w-48 h-48 bg-gray-100 relative;
 }
 
 .flip-container {
@@ -125,8 +125,7 @@ h3 {
   height: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  border-radius: 9999px;
-  /* Para mantener el aspecto redondeado */
+  border-radius: 8px;
 }
 
 .back {
