@@ -12,7 +12,7 @@ const Nav = () => {
 
 
   return (
-    <>
+    <div className="relative">
       <nav className="flex flex-col gap-4 items-center bg-black text-white pt-4 pb-2 lg:flex-row lg:justify-between lg:p-6">
       <a href="/" className="inline-flex items-center"><img src="./assets/img/logo_white.png" className="logo" alt="Delta Sport US | Custom Team Apparel" /></a>
         <div className="hidden lg:flex justify-between items-center">
@@ -42,8 +42,9 @@ const Nav = () => {
           {isCart ? <CartDetail /> : <CartEmpty />}
         </div>
       </div>
-
-    </>
+      <div className="m-0 skewed-header">
+        </div>
+    </div>
   )
 }
 

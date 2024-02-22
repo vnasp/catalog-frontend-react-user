@@ -1,50 +1,59 @@
 import { FaCirclePlus, FaCircleMinus } from "react-icons/fa6"
-import { IoShirtOutline } from "react-icons/io5";
+import { IoShirtOutline } from "react-icons/io5"
 import { useContext, useState } from "react"
 import { DataContext } from "../context/DataContext"
 import ShareOnWhatsApp from "./Whatsapp"
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from 'uuid'
 
 const CatalogForm = () => {
-  const { cart, setCart, setShowCart, showConfirmationPopup,handleCloseConfirmationPopup } = useContext(DataContext)
-  const [selectedFit, setSelectedFit] = useState('');
-  const [selectedType, setSelectedType] = useState('');
-  const [selectedSize, setSelectedSize] = useState('');
-  const [selectedQuantity, setSelectedQuantity] = useState(1);
-  const [isSizeChartVisible, setIsSizeChartVisible] = useState(false);
+  const { setCart, setShowCart, showConfirmationPopup,handleCloseConfirmationPopup } = useContext(DataContext)
+  const [selectedFit, setSelectedFit] = useState('')
+  const [selectedType, setSelectedType] = useState('')
+  const [selectedSize, setSelectedSize] = useState('')
+  const [selectedQuantity, setSelectedQuantity] = useState(1)
+  const [isSizeChartVisible, setIsSizeChartVisible] = useState(false)
+  const [currentImage, setCurrentImage] = useState('./assets/img/product-short-sleeve.webp')
 
+  const images = {
+    'Tank Top': './assets/img/product-tank-top.webp',
+    'Short Sleeve': './assets/img/product-short-sleeve.webp',
+    'Long Sleeve': './assets/img/product-long-sleeve.webp',
+    'Hoodie': './assets/img/product-hoodie.webp',
+  }
 
-  const handleTypeClick = (newType) => {
-    setSelectedType(newType);
-  };
+  const handleTypeClick = (type) => {
+    setSelectedType(type)
+    setCurrentImage(images[type])
+  }
+
   const handleFitClick = (newFit) => {
-    setSelectedFit(newFit);
-  };
+    setSelectedFit(newFit)
+  }
 
   const handleSizeClick = (newSize) => {
-    setSelectedSize(newSize);
-  };
+    setSelectedSize(newSize)
+  }
 
   const incrementQuantity = () => {
-    setSelectedQuantity((prevQuantity) => prevQuantity + 1);
-  };
+    setSelectedQuantity((prevQuantity) => prevQuantity + 1)
+  }
 
   const decrementQuantity = () => {
-    setSelectedQuantity((prevQuantity) => (prevQuantity > 1 ? prevQuantity - 1 : 1));
-  };
+    setSelectedQuantity((prevQuantity) => (prevQuantity > 1 ? prevQuantity - 1 : 1))
+  }
 
   const handleQuantityChange = (event) => {
-    const value = Math.max(1, parseInt(event.target.value, 10));
-    setSelectedQuantity(value || 1);
-  };
+    const value = Math.max(1, parseInt(event.target.value, 10))
+    setSelectedQuantity(value || 1)
+  }
 
   const allSelectionsMade = selectedFit && selectedType && selectedSize && selectedQuantity > 0
 
   const addToCart = (productDetails) => {
     setCart((prevCart) => [...prevCart, productDetails])
-    setSelectedFit(null);
-    setSelectedType(null);
-    setSelectedSize(null);
+    setSelectedFit(null)
+    setSelectedType(null)
+    setSelectedSize(null)
     setShowCart(true)
   }
 
@@ -62,7 +71,8 @@ const CatalogForm = () => {
       }
       <div id="RequestAQuote" className="flex flex-col justify-center items-start mt-32 lg:grid lg:grid-cols-2 bg-gray-200 rounded-xl lg:p-6 lg:mx-16 lg:mb-16">
         <div className="mb-2 lg:m-0">
-          <img src="./assets/img/gear.webp" className="rounded-t-xl w-fit pe-8" />
+          <img src={currentImage} className="rounded-t-xl w-fit pe-8" />
+          <p className="text-center text-sm">Reference image. You can customize the entire design and colors.</p>
         </div>
         <div className="my-4 mx-1 lg:m-0">
           <h2 className="text-3xl text-center font-bold uppercase">Top Gear Customized</h2>
@@ -163,7 +173,7 @@ const CatalogForm = () => {
                     type: selectedType,
                     size: selectedSize,
                     quantity: selectedQuantity || 1
-                  });
+                  })
                 }
               }}
               disabled={!allSelectionsMade}
