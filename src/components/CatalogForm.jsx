@@ -11,6 +11,8 @@ const CatalogForm = () => {
   const [selectedType, setSelectedType] = useState('');
   const [selectedSize, setSelectedSize] = useState('');
   const [selectedQuantity, setSelectedQuantity] = useState(1);
+  const [isSizeChartVisible, setIsSizeChartVisible] = useState(false);
+
 
   const handleTypeClick = (newType) => {
     setSelectedType(newType);
@@ -165,9 +167,26 @@ const CatalogForm = () => {
             <div className="text-justify">Our jerseys are made from Dryfit fabric, featuring high quality Sublimation for direct printing, ensuring the design remains intact. You can customize the jersey with any color or design. Adding numbers or letters is <span className="font-bold">free of charge</span>. We offer unisex sizing to accommodate both men and women, with an option for a female fit as well. We work with a minimum order of 10 assorted units, but you get free shipping and design services.</div>
           </div>
           <div className="flex flex-row justify-between items-center">
-            <div className="flex items-center justify-center">
-            <IoShirtOutline className="text-green-500 p-2 text-5xl font-bold"/> Check the Size Chart
+            <div className="flex items-center justify-center" onClick={() => setIsSizeChartVisible(true)}>
+              <IoShirtOutline className="text-green-500 p-2 text-5xl font-bold" /> Check the Size Chart
             </div>
+
+            {isSizeChartVisible && (
+              <div className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full">
+                <div className="relative top-20 mx-auto p-2 border w-fit shadow-lg rounded-md bg-white">
+                  <div className="flex flex-row justify-between items-center">
+                    <h3 className="text-2xl font-medium text-gray-900">Size Chart</h3>
+                    <button
+                      id="ok-btn"
+                      className="px-4 py-2"
+                      onClick={() => setIsSizeChartVisible(false)}>
+                      Close
+                    </button>
+                  </div>
+                  <img src="./assets/img/sizechart.webp" width={600} />
+                </div>
+              </div>
+            )}
             <div className="w-1/2">
               <ShareOnWhatsApp
                 message="Check out this team gears"
