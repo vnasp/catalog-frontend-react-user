@@ -3,22 +3,21 @@ import Share from "./Share"
 import { v4 as uuidv4 } from 'uuid'
 
 import { DataContext } from "../context/DataContext"
-import ImageSliderShorts from "../components/ImageSliderShorts"
 import FitOptions from "./CatalogFit"
 import TypeOptions from "./CatalogType"
 import SizeOptions from "./CatalogSize"
 import QuantityOptions from "./CatalogQuantity"
+import ImageSliderShorts from "./ImageSliderShorts"
+import ImageSliderCatalog from "./ImageSliderCatalog"
 
 import { IoShirtOutline } from "react-icons/io5"
 
 const CatalogForm = () => {
   const { setCart, setShowCart, showConfirmationPopup, handleCloseConfirmationPopup } = useContext(DataContext)
   const [selectedFit, setSelectedFit] = useState('')
-  const [selectedType, setSelectedType] = useState('')
   const [selectedSize, setSelectedSize] = useState('')
   const [selectedQuantity, setSelectedQuantity] = useState(1)
   const [isSizeChartVisible, setIsSizeChartVisible] = useState(false)
-  const [currentImage, setCurrentImage] = useState('./assets/img/product-short-sleeve.webp')
   const [images, setImages] = useState({
     'Tank Top': [
       './assets/img/tank-tops/tank-top1.webp',
@@ -31,7 +30,7 @@ const CatalogForm = () => {
       './assets/img/tank-tops/tank-top8.webp',
       './assets/img/tank-tops/tank-top9.webp',
       './assets/img/tank-tops/tank-top10.webp',
-      './assets/img/tank-tops/tank-top11.webp',
+      './assets/img/tank-tops/tank-top11.webp'
     ],
     'Short Sleeve': [
       './assets/img/short-sleeves/short-sleeve1.webp',
@@ -72,10 +71,10 @@ const CatalogForm = () => {
       './assets/img/hoodies/hoodie4.webp'
     ],
   })
+  const [selectedType, setSelectedType] = useState(Object.keys(images)[0]); 
 
   const handleTypeClick = (type) => {
     setSelectedType(type)
-    setCurrentImage(images[type][0])
   }
 
   const handleFitClick = (newFit) => {
@@ -113,10 +112,9 @@ const CatalogForm = () => {
         )
       }
       <section id="RequestAQuote" className=" bg-gray-200 rounded-xl mt-32 lg:mx-16">
-        <div className="flex flex-col justify-center items-start lg:grid lg:grid-cols-2 lg:p-6">
+        <div className="flex flex-col justify-center items-start gap-6 lg:grid lg:grid-cols-2 lg:px-4 lg:py-6">
           <div className="mb-2 lg:m-0">
-            <img src={currentImage} className="rounded-t-xl w-fit lg:pe-8" />
-            <p className="text-center text-sm">Reference image. You can customize the entire design and colors.</p>
+          <ImageSliderCatalog images={images[selectedType]} />
           </div>
           <div className="my-4 mx-1 lg:m-0">
             <h2 className="text-3xl text-center font-bold uppercase">Top Gear Customized</h2>
