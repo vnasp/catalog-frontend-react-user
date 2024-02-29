@@ -1,30 +1,81 @@
-import { FaCirclePlus, FaCircleMinus } from "react-icons/fa6"
-import { IoShirtOutline } from "react-icons/io5"
 import { useContext, useState } from "react"
-import { DataContext } from "../context/DataContext"
 import Share from "./Share"
 import { v4 as uuidv4 } from 'uuid'
+
+import { DataContext } from "../context/DataContext"
 import ImageSliderShorts from "../components/ImageSliderShorts"
+import FitOptions from "./CatalogFit"
+import TypeOptions from "./CatalogType"
+import SizeOptions from "./CatalogSize"
+import QuantityOptions from "./CatalogQuantity"
+
+import { IoShirtOutline } from "react-icons/io5"
 
 const CatalogForm = () => {
-  const { cart, setCart, setShowCart, showConfirmationPopup, handleCloseConfirmationPopup } = useContext(DataContext)
+  const { setCart, setShowCart, showConfirmationPopup, handleCloseConfirmationPopup } = useContext(DataContext)
   const [selectedFit, setSelectedFit] = useState('')
   const [selectedType, setSelectedType] = useState('')
   const [selectedSize, setSelectedSize] = useState('')
   const [selectedQuantity, setSelectedQuantity] = useState(1)
   const [isSizeChartVisible, setIsSizeChartVisible] = useState(false)
   const [currentImage, setCurrentImage] = useState('./assets/img/product-short-sleeve.webp')
-
-  const images = {
-    'Tank Top': './assets/img/product-tank-top.webp',
-    'Short Sleeve': './assets/img/product-short-sleeve.webp',
-    'Long Sleeve': './assets/img/product-long-sleeve.webp',
-    'Hoodie': './assets/img/product-hoodie.webp',
-  }
+  const [images, setImages] = useState({
+    'Tank Top': [
+      './assets/img/tank-tops/tank-top1.webp',
+      './assets/img/tank-tops/tank-top2.webp',
+      './assets/img/tank-tops/tank-top3.webp',
+      './assets/img/tank-tops/tank-top4.webp',
+      './assets/img/tank-tops/tank-top5.webp',
+      './assets/img/tank-tops/tank-top6.webp',
+      './assets/img/tank-tops/tank-top7.webp',
+      './assets/img/tank-tops/tank-top8.webp',
+      './assets/img/tank-tops/tank-top9.webp',
+      './assets/img/tank-tops/tank-top10.webp',
+      './assets/img/tank-tops/tank-top11.webp',
+    ],
+    'Short Sleeve': [
+      './assets/img/short-sleeves/short-sleeve1.webp',
+      './assets/img/short-sleeves/short-sleeve2.webp',
+      './assets/img/short-sleeves/short-sleeve3.webp',
+      './assets/img/short-sleeves/short-sleeve4.webp',
+      './assets/img/short-sleeves/short-sleeve5.webp',
+      './assets/img/short-sleeves/short-sleeve6.webp',
+      './assets/img/short-sleeves/short-sleeve7.webp',
+      './assets/img/short-sleeves/short-sleeve8.webp',
+      './assets/img/short-sleeves/short-sleeve9.webp',
+      './assets/img/short-sleeves/short-sleeve10.webp',
+      './assets/img/short-sleeves/short-sleeve11.webp',
+      './assets/img/short-sleeves/short-sleeve12.webp',
+      './assets/img/short-sleeves/short-sleeve13.webp',
+      './assets/img/short-sleeves/short-sleeve14.webp',
+      './assets/img/short-sleeves/short-sleeve15.webp',
+      './assets/img/short-sleeves/short-sleeve16.webp',
+      './assets/img/short-sleeves/short-sleeve17.webp',
+      './assets/img/short-sleeves/short-sleeve18.webp',
+      './assets/img/short-sleeves/short-sleeve19.webp',
+      './assets/img/short-sleeves/short-sleeve20.webp'
+    ],
+    'Long Sleeve': [
+      './assets/img/long-sleeves/long-sleeve1.webp',
+      './assets/img/long-sleeves/long-sleeve2.webp',
+      './assets/img/long-sleeves/long-sleeve3.webp',
+      './assets/img/long-sleeves/long-sleeve4.webp',
+      './assets/img/long-sleeves/long-sleeve5.webp',
+      './assets/img/long-sleeves/long-sleeve6.webp',
+      './assets/img/long-sleeves/long-sleeve7.webp',
+      './assets/img/long-sleeves/long-sleeve8.webp'
+      ],
+    'Hoodie': [
+      './assets/img/hoodies/hoodie1.webp',
+      './assets/img/hoodies/hoodie2.webp',
+      './assets/img/hoodies/hoodie3.webp',
+      './assets/img/hoodies/hoodie4.webp'
+    ],
+  })
 
   const handleTypeClick = (type) => {
     setSelectedType(type)
-    setCurrentImage(images[type])
+    setCurrentImage(images[type][0])
   }
 
   const handleFitClick = (newFit) => {
@@ -33,14 +84,6 @@ const CatalogForm = () => {
 
   const handleSizeClick = (newSize) => {
     setSelectedSize(newSize)
-  }
-
-  const incrementQuantity = () => {
-    setSelectedQuantity((prevQuantity) => prevQuantity + 1)
-  }
-
-  const decrementQuantity = () => {
-    setSelectedQuantity((prevQuantity) => (prevQuantity > 1 ? prevQuantity - 1 : 1))
   }
 
   const handleQuantityChange = (event) => {
@@ -77,120 +120,10 @@ const CatalogForm = () => {
           </div>
           <div className="my-4 mx-1 lg:m-0">
             <h2 className="text-3xl text-center font-bold uppercase">Top Gear Customized</h2>
-            <div id="fitOptions" className="py-3">
-              <h4 className="font-bold uppercase pb-1">Select the fit</h4>
-              <div className="flex flex-row gap-4">
-                <button
-                  className={`size ${selectedFit === 'Men/Unisex' ? 'selected' : ''}`}
-                  onClick={() => handleFitClick('Men/Unisex')}
-                > Men/Unisex </button>
-                <button
-                  className={`size ${selectedFit === 'Women' ? 'selected' : ''}`}
-                  onClick={() => handleFitClick('Women')}
-                > Women </button>
-                <button
-                  className={`size ${selectedFit === 'Child' ? 'selected' : ''}`}
-                  onClick={() => handleFitClick('Child')}
-                > Child </button>
-              </div>
-            </div>
-            <div id="typeOptions" className="py-3">
-              <h4 className="font-bold uppercase pb-1">Select the type</h4>
-              <div className="grid grid-cols-2 gap-4 lg:flex lg:flex-row">
-                <button
-                  className={`size ${selectedType === 'Tank Top' ? 'selected' : ''}`}
-                  onClick={() => handleTypeClick('Tank Top')}
-                > Tank Top (No Sleeve) </button>
-                <button
-                  className={`size ${selectedType === 'Short Sleeve' ? 'selected' : ''}`}
-                  onClick={() => handleTypeClick('Short Sleeve')}
-                > Short Sleeve </button>
-                <button
-                  className={`size ${selectedType === 'Long Sleeve' ? 'selected' : ''}`}
-                  onClick={() => handleTypeClick('Long Sleeve')}
-                > Long Sleeve </button>
-                <button
-                  className={`size ${selectedType === 'Hoodie' ? 'selected' : ''}`}
-                  onClick={() => handleTypeClick('Hoodie')}
-                > Hoodie / Daywalker </button>
-              </div>
-            </div>
-            <div id="sizeOptions" className="py-3">
-              <h4 className="font-bold uppercase pb-1">Select the size</h4>
-              {selectedFit !== 'Child' && (
-                <div id="adultChart" className="grid grid-cols-2 gap-4 lg:flex">
-                  <button
-                    className={`size ${selectedSize === 'XS' ? 'selected' : ''}`}
-                    onClick={() => handleSizeClick('XS')}
-                  > XS </button>
-                  <button
-                    className={`size ${selectedSize === 'S' ? 'selected' : ''}`}
-                    onClick={() => handleSizeClick('S')}
-                  > S </button>
-                  <button
-                    className={`size ${selectedSize === 'M' ? 'selected' : ''}`}
-                    onClick={() => handleSizeClick('M')}
-                  > M </button>
-                  <button
-                    className={`size ${selectedSize === 'L' ? 'selected' : ''}`}
-                    onClick={() => handleSizeClick('L')}
-                  > L </button>
-                  <button
-                    className={`size ${selectedSize === 'XL' ? 'selected' : ''}`}
-                    onClick={() => handleSizeClick('XL')}
-                  > XL </button>
-                  <button
-                    className={`size ${selectedSize === '2XL' ? 'selected' : ''}`}
-                    onClick={() => handleSizeClick('2XL')}
-                  > 2XL </button>
-                  <button
-                    className={`size ${selectedSize === '3XL' ? 'selected' : ''}`}
-                    onClick={() => handleSizeClick('3XL')}
-                  > 3XL </button>
-                </div>
-              )}
-              {selectedFit === 'Child' && (<div id="childChart" className="grid grid-cols-2 gap-4 lg:flex">
-                <button
-                  className={`size ${selectedSize === '4' ? 'selected' : ''}`}
-                  onClick={() => handleSizeClick('4')}
-                > 4 </button>
-                <button
-                  className={`size ${selectedSize === '6' ? 'selected' : ''}`}
-                  onClick={() => handleSizeClick('6')}
-                > 6 </button>
-                <button
-                  className={`size ${selectedSize === '8' ? 'selected' : ''}`}
-                  onClick={() => handleSizeClick('8')}
-                > 8 </button>
-                <button
-                  className={`size ${selectedSize === '10' ? 'selected' : ''}`}
-                  onClick={() => handleSizeClick('10')}
-                > 10 </button>
-                <button
-                  className={`size ${selectedSize === '12' ? 'selected' : ''}`}
-                  onClick={() => handleSizeClick('12')}
-                > 12 </button>
-                <button
-                  className={`size ${selectedSize === '14' ? 'selected' : ''}`}
-                  onClick={() => handleSizeClick('14')}
-                > 14 </button>
-              </div>
-              )}
-            </div>
-            <div id="quantityOptions" className="py-3">
-              <h4 className="font-bold uppercase pb-1">Quantity</h4>
-              <div className="inline-flex items-center">
-                <FaCircleMinus className="text-5xl lg:text-4xl mx-4 cursor-pointer" onClick={decrementQuantity} />
-                <input
-                  type="number"
-                  className="rounded-lg border-green-500 py-3 text-center"
-                  value={selectedQuantity}
-                  onChange={handleQuantityChange}
-                  min="1"
-                />
-                <FaCirclePlus className="text-5xl lg:text-4xl mx-4 cursor-pointer" onClick={incrementQuantity} />
-              </div>
-            </div>
+            <FitOptions selectedFit={selectedFit} handleFitClick={handleFitClick} />
+            <TypeOptions selectedType={selectedType} handleTypeClick={handleTypeClick} />
+            <SizeOptions selectedSize={selectedSize} selectedFit={selectedFit} handleSizeClick={handleSizeClick} />
+            <QuantityOptions selectedQuantity={selectedQuantity} setSelectedQuantity={setSelectedQuantity} handleQuantityChange={handleQuantityChange} />
             <div>
               <button
                 className={`btn primary w-full ${!allSelectionsMade ? 'opacity-50 cursor-not-allowed' : ''}`}
@@ -242,7 +175,7 @@ const CatalogForm = () => {
                 </div>
               )}
               <div className="w-1/2">
-<Share/>
+                <Share />
               </div>
             </div>
           </div>
