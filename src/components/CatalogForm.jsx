@@ -253,7 +253,7 @@ const CatalogForm = () => {
       </section>
       <section className="mt-8 bg-gray-200 rounded-xl lg:p-6 lg:mx-16 lg:mb-8">
         <h2>Are you looking for ... ?</h2>
-        <p className="py-2">We also have Men/Unisex, Women and Child Shorts, with or without pockets. Ask about this too with your request a quote.</p>
+        <p className="py-2">We also offer Men/Unisex, Women, and Child Shorts, available with or without pockets. Please inquire about these options when requesting a quote.</p>
         <ImageSliderShorts />
       </section>
 
