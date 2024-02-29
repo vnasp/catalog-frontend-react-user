@@ -4,7 +4,7 @@ import { useContext, useState } from "react"
 import { DataContext } from "../context/DataContext"
 import Share from "./Share"
 import { v4 as uuidv4 } from 'uuid'
-import ImageSliderShorts from "./ImageSliderShorts"
+import ImageSliderShorts from "../components/ImageSliderShorts"
 
 const CatalogForm = () => {
   const { cart, setCart, setShowCart, showConfirmationPopup, handleCloseConfirmationPopup } = useContext(DataContext)
@@ -242,7 +242,7 @@ const CatalogForm = () => {
                 </div>
               )}
               <div className="w-1/2">
-
+<Share/>
               </div>
             </div>
           </div>
@@ -254,10 +254,9 @@ const CatalogForm = () => {
       <section className="mt-8 bg-gray-200 rounded-xl lg:p-6 lg:mx-16 lg:mb-8">
         <h2>Are you looking for ... ?</h2>
         <p className="py-2">We also have Men/Unisex, Women and Child Shorts, with or without pockets. Ask about this too with your request a quote.</p>
-        <div className="flex flew-row justify-center items-center text-center">
         <ImageSliderShorts />
-        </div>
       </section>
+
     </>
   )
 }
