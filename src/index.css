@@ -38,9 +38,10 @@ h3 {
 }
 
 .header-cover {
-  background-image: url("/assets/img/banner.webp");
+  background-image: url("/assets/img/banner.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position-y: 30%;
   height: 450px;
 }
 
