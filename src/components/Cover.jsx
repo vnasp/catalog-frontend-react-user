@@ -9,7 +9,7 @@ const Cover = () => {
           Define Your Style, Unite Your Team
         </div>
         <div className="bg-black bg-opacity-20 p-4 rounded-lg">
-          <h1 className="leading-tight">Custom Team Apparel</h1>
+          <h1 className="leading-tight">Affordable Custom Team Apparel</h1>
           <p className="leading-normal text-2xl">Tailored designs to elevate your game</p>
           </div>
       </div>

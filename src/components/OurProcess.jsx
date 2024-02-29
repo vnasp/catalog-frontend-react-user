@@ -13,7 +13,7 @@ const OurProcess = () => {
               Request a Quote
             </div>
             <div className="back flex items-center justify-center text-center text-white rounded-full py-6 px-4 shadow-md shadow-gray-300 bg-green-500 border-2 border-green-600">
-              Add 10 or more assorted units to the cart. You can mix different clothing.
+              Add 10 or more assorted units to the cart. You can mix and match types of clothing for your order.
             </div>
           </div>
         </div>
@@ -27,7 +27,7 @@ const OurProcess = () => {
               Customize & Order
             </div>
             <div className="back flex items-center justify-center text-center text-white rounded-full py-6 px-4 shadow-md shadow-gray-300 bg-green-500 border-2 border-green-600">
-              Accept the quote and send us the design. Letters and numbers are free!
+              Accept the quote and share us your design ideas. You can add/modify the items after confirming the design.
             </div>
           </div>
         </div>
@@ -38,10 +38,10 @@ const OurProcess = () => {
           <div className="flipper">
             <div className="front process">
               <FaTruck className="text-4xl mb-2 text-green-500 hover:text-red-500" />
-              We Ship Your Order
+              We Ship Your Order Free
             </div>
             <div className="back flex items-center justify-center text-center text-white rounded-full py-6 px-4 shadow-md shadow-gray-300 bg-green-500 border-2 border-green-600">
-              We print in the US and ship quickly. Our delivery times are the best.
+              Once the order is placed, our team works fast to get it in time for your first pull.
             </div>
           </div>
         </div>
@@ -56,7 +56,7 @@ const OurProcess = () => {
               Enjoy Your Custom Gear
             </div>
             <div className="back flex items-center justify-center text-center text-white rounded-full py-6 px-4 shadow-md shadow-gray-300 bg-green-500 border-2 border-green-600">
-              Unite your team with a single sports clothing design. A real team!
+              Run, layout and huck it! Share your photos and tag us!
             </div>
           </div>
         </div>

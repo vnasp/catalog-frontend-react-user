@@ -18,7 +18,7 @@ const Reassurance = () => {
   }, []);
   return (
     <>      <div className="hidden lg:absolute bottom-0 left-0 right-0 transform lg:translate-y-1/2 text-black lg:grid grid-cols-4 gap-6 mx-16 text-center">
-    <div className="reassurance lg:px-6"><MdLocalShipping className="icon" />Shipping Across the United States</div>
+    <div className="reassurance lg:px-6"><MdLocalShipping className="icon" />Free Shipping Across the United States</div>
     <div className="reassurance lg:px-6"><FaRocket className="icon" />Swift Manufacturing & Shipping</div>
     <div className="reassurance lg:px-6"><MdPrint className="icon" />Advanced Sublimation Printing</div>
     <div className="reassurance lg:px-6"><FaPencilAlt className="icon" />Customize Your Team Gear</div>
