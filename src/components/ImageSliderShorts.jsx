@@ -8,10 +8,17 @@ import 'swiper/css/scrollbar';
 
 const ImageSliderShorts = () => {
   const images = [
-    './assets/img/shorts1.webp',
-    './assets/img/shorts2.webp',
-    './assets/img/shorts3.webp',
-    './assets/img/shorts4.webp',
+    './assets/img/shorts/shorts1.webp',
+    './assets/img/shorts/shorts2.webp',
+    './assets/img/shorts/shorts3.webp',
+    './assets/img/shorts/shorts4.webp',
+    './assets/img/shorts/shorts5.webp',    
+    './assets/img/shorts/shorts6.webp',
+    './assets/img/shorts/shorts7.webp',
+    './assets/img/shorts/shorts8.webp',
+    './assets/img/shorts/shorts9.webp',
+    './assets/img/shorts/shorts10.webp',
+    './assets/img/shorts/shorts11.webp',
   ];
 
   return (
