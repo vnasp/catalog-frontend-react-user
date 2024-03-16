@@ -6,7 +6,7 @@ import 'swiper/css/pagination'
 import 'swiper/css/scrollbar'
 
 const ImageSliderCatalog = ({ images }) => {
-  const defaultImage = "./assets/short-sleeves/short-sleeve4.jpg"
+  const defaultImage = "./assets/img/short-sleeves/short-sleeve4.webp"
   const imagesToShow = images && images.length > 0 ? images : [defaultImage]
 
   return (
