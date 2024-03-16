@@ -18,6 +18,7 @@ const CatalogForm = () => {
   const [selectedSize, setSelectedSize] = useState('')
   const [selectedQuantity, setSelectedQuantity] = useState(1)
   const [isSizeChartVisible, setIsSizeChartVisible] = useState(false)
+  const currentImage ="./assets/img/tank-tops/tank-top1.webp"
   const [images, setImages] = useState({
     'Tank Top': [
       './assets/img/tank-tops/tank-top1.webp',
@@ -66,9 +67,7 @@ const CatalogForm = () => {
       ],
     'Hoodie': [
       './assets/img/hoodies/hoodie1.webp',
-      './assets/img/hoodies/hoodie2.webp',
-      './assets/img/hoodies/hoodie3.webp',
-      './assets/img/hoodies/hoodie4.webp'
+      './assets/img/hoodies/hoodie2.webp'
     ],
   })
   const [selectedType, setSelectedType] = useState(Object.keys(images)[0]); 
@@ -157,7 +156,7 @@ const CatalogForm = () => {
               </div>
 
               {isSizeChartVisible && (
-                <div className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full">
+                <div className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-40">
                   <div className="relative top-20 mx-auto p-2 border w-fit shadow-lg rounded-md bg-white">
                     <div className="flex flex-row justify-between items-center">
                       <h3 className="text-2xl font-medium text-gray-900">Size Chart</h3>
@@ -168,7 +167,7 @@ const CatalogForm = () => {
                         Close
                       </button>
                     </div>
-                    <img src="./assets/img/sizechart.webp" width={600} />
+                    <img src="./assets/img/sizechart.jpg" width={600} />
                   </div>
                 </div>
               )}

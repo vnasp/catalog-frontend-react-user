@@ -24,7 +24,7 @@ const Nav = () => {
           </a>
         </div>
         <div className="flex flex-row justify-between gap-10 mt-4 lg:mt-0 z-50">
-          <a href="/" className="inline-flex items-center"><BsInstagram className="icon" />Follow Us</a>
+          <a href="https://www.instagram.com/deltasport.us/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center"><BsInstagram className="icon" />Follow Us</a>
           <button type="button" onClick={handleShowCart} className="inline-flex items-center">
             <FaCartShopping className="icon" />Cart
           </button>

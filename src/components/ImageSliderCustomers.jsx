@@ -14,9 +14,7 @@ const ImageSliderCustomers = () => {
     './assets/img/customers/customer4.jpg',
     './assets/img/customers/customer6.jpg',
     './assets/img/customers/customer7.jpg',
-    './assets/img/customers/customer8.jpg',
-    './assets/img/customers/customer9.jpg',
-    './assets/img/customers/customer10.jpg'
+    './assets/img/customers/customer8.jpg'
   ];
 
   return (

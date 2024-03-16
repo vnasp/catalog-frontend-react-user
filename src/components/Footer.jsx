@@ -10,7 +10,7 @@ const Footer = () => {
         <img src="./assets/img/logo_white.png" className="logo mt-8" alt="Delta Sport US | Custom Team Apparel" />
         <div className="my-4">Shipping anywhere in the continental United States.<br/>
         Contact info@deltasportus.com for all inquiries.</div>
-        <a href="/" className="inline-flex my-4"><BsInstagram className="icon" />Follow us on Instagram</a>
+        <a href="https://www.instagram.com/deltasport.us/" target="_blank" rel="noopener noreferrer" className="inline-flex my-4"><BsInstagram className="icon" />Follow us on Instagram</a>
         <div>2024 Delta Sport US - All right reserved</div>
       </div>
       <ScrollToTopButton />

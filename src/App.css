@@ -1,0 +1,193 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  background-color: #D4D4D4;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  margin: 0;
+  max-width: 100vw;
+}
+
+h1 {
+  font-family: 'Bebas Neue', serif;
+  font-weight: 800;
+  font-size: 3rem;
+}
+
+h2 {
+  font-family: 'Bebas Neue', serif;
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-family: 'Bebas Neue', serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.header-cover {
+  background-image: url("/assets/img/banner.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: 30%;
+  height: 450px;
+}
+
+.logo {
+  width: 250px;
+}
+
+@keyframes moveBackground {
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animated-gradient {
+  background: linear-gradient(135deg, rgba(255, 0, 0, 1) 0%, rgba(255, 255, 0, 1) 100%);
+  background-size: 200% 200%;
+  animation: moveBackground 4s ease infinite;
+}
+
+.offcanvas-custom {
+  @apply fixed top-0 right-0 w-80 px-4 h-full bg-gray-100 shadow-lg transform ease-in-out duration-300 z-50
+}
+
+.icon {
+  color: #E4002B;
+  margin-right: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.btn {
+  @apply px-2 py-3 rounded-lg font-bold;
+}
+
+.primary {
+  @apply bg-red-500 text-white;
+}
+
+.bg-red {
+  background-color: #E4002B;
+}
+
+.reassurance {
+  @apply flex flex-col items-center justify-center bg-gray-100 text-black rounded-lg p-4 shadow-md shadow-gray-300;
+}
+
+.reassurance .icon {
+  color: #E4002B;
+  margin: 0.5rem;
+  font-size: 2.25rem;
+}
+
+.process {
+  @apply flex flex-col items-center justify-center text-center text-black rounded-lg py-6 px-4 shadow-md shadow-gray-300 w-48 h-48 bg-gray-100 relative;
+}
+
+.flip-container {
+  perspective: 1000px;
+}
+
+.flipper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-container:hover .flipper {
+  transform: rotateY(180deg);
+}
+
+.front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 8px;
+}
+
+.back {
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.size {
+  @apply bg-white border-2 border-white rounded-lg px-5 py-1 shadow-md shadow-gray-500 focus:ring-white focus:border-white hover:ring-white hover:border-white
+}
+
+.size:hover,
+.size:active {
+  @apply border-2 border-green-800
+}
+
+.size.selected {
+  background-color: #4caf50;
+  color: white;
+
+}
+
+.product-quality {
+  @apply inline-flex items-start gap-4
+}
+
+.swiper-button-next, .swiper-rtl .swiper-button-prev,
+.swiper-button-prev, .swiper-rtl .swiper-button-next {
+  color: red;
+  font-weight: 900;
+}
+
+.skewed-header {
+  position: absolute;
+  top: 75%;
+  width: 100%;
+  height: 25%;
+  background-color: black;
+  z-index: 30;
+  transform: skewY(-1deg);
+  transform-origin: bottom right;
+  -webkit-box-shadow: 0px 10px 20px 10px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 10px 20px 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 10px 20px 10px rgba(0, 0, 0, 0.4);
+
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 5rem;
+    line-height: 5.5rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+    line-height: 1rem;
+  }
+
+  .header-cover {
+    height: 650px;
+  }
+}
