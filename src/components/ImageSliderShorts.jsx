@@ -8,17 +8,14 @@ import 'swiper/css/scrollbar';
 
 const ImageSliderShorts = () => {
   const images = [
+    './assets/img/hoodies/hoodie-another1.webp',
+    './assets/img/hoodies/hoodie-another2.webp',
+    './assets/img/shorts/shorts5.webp', 
+    './assets/img/shorts/shorts6.webp',  
     './assets/img/shorts/shorts1.webp',
     './assets/img/shorts/shorts2.webp',
     './assets/img/shorts/shorts3.webp',
-    './assets/img/shorts/shorts4.webp',
-    './assets/img/shorts/shorts5.webp',    
-    './assets/img/shorts/shorts6.webp',
-    './assets/img/shorts/shorts7.webp',
-    './assets/img/shorts/shorts8.webp',
-    './assets/img/shorts/shorts9.webp',
-    './assets/img/shorts/shorts10.webp',
-    './assets/img/shorts/shorts11.webp',
+    './assets/img/shorts/shorts4.webp'
   ];
 
   return (
@@ -45,7 +42,7 @@ const ImageSliderShorts = () => {
   >
       {images.map((src, index) => (
         <SwiperSlide key={index}>
-          <img src={src} alt={`Slide ${index + 1}`} height={280} className="rounded-lg" />
+          <img src={src} alt={`Slide ${index + 1}`} className="rounded-lg object-cover"/>
         </SwiperSlide>
       ))}
     </Swiper>

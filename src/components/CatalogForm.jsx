@@ -28,11 +28,8 @@ const CatalogForm = () => {
       './assets/img/tank-tops/tank-top5.webp',
       './assets/img/tank-tops/tank-top6.webp',
       './assets/img/tank-tops/tank-top7.webp',
-      './assets/img/tank-tops/tank-top8.webp',
-      './assets/img/tank-tops/tank-top9.webp',
-      './assets/img/tank-tops/tank-top10.webp',
-      './assets/img/tank-tops/tank-top11.webp'
-    ],
+      './assets/img/tank-tops/tank-top8.webp'
+        ],
     'Short Sleeve': [
       './assets/img/short-sleeves/short-sleeve1.webp',
       './assets/img/short-sleeves/short-sleeve2.webp',
@@ -41,19 +38,7 @@ const CatalogForm = () => {
       './assets/img/short-sleeves/short-sleeve5.webp',
       './assets/img/short-sleeves/short-sleeve6.webp',
       './assets/img/short-sleeves/short-sleeve7.webp',
-      './assets/img/short-sleeves/short-sleeve8.webp',
-      './assets/img/short-sleeves/short-sleeve9.webp',
-      './assets/img/short-sleeves/short-sleeve10.webp',
-      './assets/img/short-sleeves/short-sleeve11.webp',
-      './assets/img/short-sleeves/short-sleeve12.webp',
-      './assets/img/short-sleeves/short-sleeve13.webp',
-      './assets/img/short-sleeves/short-sleeve14.webp',
-      './assets/img/short-sleeves/short-sleeve15.webp',
-      './assets/img/short-sleeves/short-sleeve16.webp',
-      './assets/img/short-sleeves/short-sleeve17.webp',
-      './assets/img/short-sleeves/short-sleeve18.webp',
-      './assets/img/short-sleeves/short-sleeve19.webp',
-      './assets/img/short-sleeves/short-sleeve20.webp'
+      './assets/img/short-sleeves/short-sleeve8.webp'
     ],
     'Long Sleeve': [
       './assets/img/long-sleeves/long-sleeve1.webp',
@@ -112,7 +97,7 @@ const CatalogForm = () => {
       }
       <section id="RequestAQuote" className=" bg-gray-200 rounded-xl mt-32 lg:mx-16">
         <div className="flex flex-col justify-center items-start gap-6 lg:grid lg:grid-cols-2 lg:px-4 lg:py-6">
-          <div className="mb-2 lg:m-0">
+          <div className="mb-2 lg:m-0 ">
           <ImageSliderCatalog images={images[selectedType]} />
           </div>
           <div className="my-4 mx-1 lg:m-0">
@@ -184,7 +169,7 @@ const CatalogForm = () => {
       <section className="mt-8 bg-gray-200 rounded-xl lg:p-6 lg:mx-16 lg:mb-8">
         <h2>Are you looking for ... ?</h2>
         <p className="py-2">We also offer Men/Unisex, Women, and Child Shorts, available with or without pockets. Please inquire about these options when requesting a quote.</p>
-        <ImageSliderShorts />
+    <ImageSliderShorts />
       </section>
 
     </>

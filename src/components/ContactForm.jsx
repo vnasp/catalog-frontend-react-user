@@ -26,7 +26,7 @@ const ContactForm = () => {
     e.preventDefault();
 
     // Reemplaza 'YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', y 'YOUR_USER_ID' con tus valores reales
-    emailjs.send('service_sqdxv7s', 'template_kbsp1ei', updatedFormData, 'fjrMc5_WnIvQiV9Ic')
+    emailjs.send('service_4wf6ysu', 'template_dxt1z7q', updatedFormData, 'mTn6W1SnND7UaTmyN')
       .then((result) => {
         console.log(result.text);
         setShowConfirmationPopup(true)

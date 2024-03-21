@@ -33,7 +33,7 @@ const ImageSliderCatalog = ({ images }) => {
     >
       {imagesToShow.map((imageSrc, index) => (
         <SwiperSlide key={index}>
-          <img src={imageSrc} alt={`Slide ${index + 1}`} height={250} className="rounded-lg" />
+          <img src={imageSrc} alt={`Slide ${index + 1}`} className="rounded-lg w-screen" />
           <p className="text-center text-sm">Reference image. You can customize the entire design and colors.</p>
         </SwiperSlide>
       ))}
