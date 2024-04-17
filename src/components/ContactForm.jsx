@@ -17,7 +17,7 @@ const ContactForm = () => {
   
   const updatedFormData = {
     ...formData,
-    message: JSON.stringify(cart, null, 2) // Asegura que cart está actualizado
+    message: JSON.stringify(cart, null, 2)
   };
 
 
@@ -26,7 +26,8 @@ const ContactForm = () => {
     e.preventDefault();
 
     // Reemplaza 'YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', y 'YOUR_USER_ID' con tus valores reales
-    emailjs.send('service_4wf6ysu', 'template_dxt1z7q', updatedFormData, 'mTn6W1SnND7UaTmyN')
+    // service_4wf6ysu', 'template_dxt1z7q', updatedFormData, 'mTn6W1SnND7UaTmyN'
+    emailjs.send('service_sqdxv7s', 'service_sqdxv7s', updatedFormData, 'fjrMc5_WnIvQiV9Ic')
       .then((result) => {
         console.log(result.text);
         setShowConfirmationPopup(true)
