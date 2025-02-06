@@ -22,4 +22,4 @@ Este proyecto está construido utilizando las siguientes tecnologías y bibliote
 
 ## Despliegue 🚀
 
-El sitio web está desplegado y accesible en: [[http://react-pizzeria.netlify.app](https://vnasp.github.io/restaurant-frontend-react-user/)https://vnasp.github.io/restaurant-frontend-react-user/]([http://react-pizzeria.netlify.ap](https://vnasp.github.io/restaurant-frontend-react-user/)https://vnasp.github.io/restaurant-frontend-react-user/)
+El sitio web está desplegado y accesible en: https://vnasp.github.io/catalog-frontend-react-user/
